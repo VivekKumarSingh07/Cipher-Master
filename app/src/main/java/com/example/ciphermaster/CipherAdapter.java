@@ -1,6 +1,7 @@
 package com.example.ciphermaster;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -45,11 +46,14 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherAdapter.CipherView
 
     @Override
     public void onBindViewHolder(@NonNull CipherViewHolder holder, int position) {
-        Information information = informationList.get(position);
+        final Information information = informationList.get(position);
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mCtx, "Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mCtx, Encrypt.class );
+                intent.putExtra("Title", information.getTitle());
+                mCtx.startActivity(intent);
             }
         });
         holder.titleTextView.setText(information.getTitle());
