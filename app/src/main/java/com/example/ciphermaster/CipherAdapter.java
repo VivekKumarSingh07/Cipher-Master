@@ -49,7 +49,7 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherAdapter.CipherView
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mCtx, "hello", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mCtx, "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
         holder.titleTextView.setText(information.getTitle());
