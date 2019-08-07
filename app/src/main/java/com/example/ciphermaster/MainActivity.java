@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         cipherList = new ArrayList<>();
 
-        cipherList.add(new Information("Ceaser's Cipher", "CC"));
+        cipherList.add(new Information("Caesar's Cipher", "CC"));
         cipherList.add(new Information("AA", "BB"));
 
         CipherAdapter adapter = new CipherAdapter(this, cipherList);
