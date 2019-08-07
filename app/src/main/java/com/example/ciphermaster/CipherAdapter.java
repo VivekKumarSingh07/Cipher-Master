@@ -1,11 +1,14 @@
 package com.example.ciphermaster;
+
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,6 +17,19 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherAdapter.CipherView
 
     private Context mCtx;
     private List<Information> informationList;
+
+
+    class CipherViewHolder extends RecyclerView.ViewHolder {
+        TextView titleTextView, descTextView;
+        CardView mCardView;
+
+        public CipherViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mCardView = itemView.findViewById(R.id.card_view);
+            this.titleTextView = itemView.findViewById(R.id.text_View_Cipher_Name);
+            this.descTextView = itemView.findViewById(R.id.text_View_Cipher_Details);
+        }
+    }
 
     public CipherAdapter(Context mCtx, List<Information> informationList) {
         this.mCtx = mCtx;
@@ -30,7 +46,12 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherAdapter.CipherView
     @Override
     public void onBindViewHolder(@NonNull CipherViewHolder holder, int position) {
         Information information = informationList.get(position);
-
+        holder.mCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mCtx, "hello", Toast.LENGTH_SHORT).show();
+            }
+        });
         holder.titleTextView.setText(information.getTitle());
         holder.descTextView.setText(information.getShortdesc());
     }
@@ -38,16 +59,6 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherAdapter.CipherView
     @Override
     public int getItemCount() {
         return informationList.size();
-    }
-
-    class CipherViewHolder extends RecyclerView.ViewHolder {
-        TextView titleTextView, descTextView;
-
-        public CipherViewHolder(@NonNull View itemView) {
-            super(itemView);
-            this.titleTextView = itemView.findViewById(R.id.text_View_Cipher_Name);
-            this.descTextView = itemView.findViewById(R.id.text_View_Cipher_Details);
-        }
     }
 
 
