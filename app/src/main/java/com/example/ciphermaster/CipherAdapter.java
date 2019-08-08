@@ -50,7 +50,6 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherAdapter.CipherView
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mCtx, "Clicked", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mCtx, Encrypt.class );
                 intent.putExtra("Title", information.getTitle());
                 mCtx.startActivity(intent);
