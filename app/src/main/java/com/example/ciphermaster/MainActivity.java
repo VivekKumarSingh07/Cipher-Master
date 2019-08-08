@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         cipherList = new ArrayList<>();
 
         cipherList.add(new Information("Caesar's Cipher", "CC"));
-        cipherList.add(new Information("AA", "BB"));
+        cipherList.add(new Information("ROT13 Cipher", "BB"));
+        cipherList.add(new Information("Null Cipher", "AA"));
+        cipherList.add(new Information("Atbash Cipher", "AA"));
 
         CipherAdapter adapter = new CipherAdapter(this, cipherList);
         recyclerView.setAdapter(adapter);

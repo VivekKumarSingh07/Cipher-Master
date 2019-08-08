@@ -37,7 +37,8 @@ public class Encrypt extends AppCompatActivity {
                     encryptedText.setText(cipherText);
                     encryptedText.setVisibility(View.VISIBLE);
                 }
-                Toast.makeText(Encrypt.this, "You did some mischief", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(Encrypt.this, "Enter in correct format", Toast.LENGTH_SHORT).show();
             }
         });
     }
