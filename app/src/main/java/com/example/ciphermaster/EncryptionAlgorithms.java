@@ -27,12 +27,13 @@ public class EncryptionAlgorithms {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < message.length(); i++) {
             if (!Character.isAlphabetic(message.charAt(i))) {
-                return "";
+                result.append(' ');
             }
-            if (Character.isUpperCase(message.charAt(i))) {
+            else if (Character.isUpperCase(message.charAt(i))) {
                 char ch = (char) (((int) message.charAt(i) + 4 - 65) % 26 + 65);
                 result.append(ch);
-            } else {
+            }
+            else if(Character.isLowerCase(message.charAt(i))) {
                 char ch = (char) (((int) message.charAt(i) + 4 - 97) % 26 + 97);
                 result.append(ch);
             }

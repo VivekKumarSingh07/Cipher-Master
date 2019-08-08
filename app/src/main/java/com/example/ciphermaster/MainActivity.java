@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
         cipherList = new ArrayList<>();
 
-        cipherList.add(new Information("Caesar's Cipher", "CC"));
-        cipherList.add(new Information("ROT13 Cipher", "BB"));
-        cipherList.add(new Information("Null Cipher", "AA"));
-        cipherList.add(new Information("Atbash Cipher", "AA"));
+        cipherList.add(new Information("Caesar's Cipher", "rotate by 3 places"));
+        cipherList.add(new Information("ROT13 Cipher", "rotate by 13 places"));
+        cipherList.add(new Information("Null Cipher", "first letter of each word"));
+        cipherList.add(new Information("Atbash Cipher", "maps characters to other"));
 
         CipherAdapter adapter = new CipherAdapter(this, cipherList);
         recyclerView.setAdapter(adapter);
