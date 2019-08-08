@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -50,7 +49,7 @@ public class CipherAdapter extends RecyclerView.Adapter<CipherAdapter.CipherView
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mCtx, Encrypt.class );
+                Intent intent = new Intent(mCtx, Encrypt.class);
                 intent.putExtra("Title", information.getTitle());
                 mCtx.startActivity(intent);
             }

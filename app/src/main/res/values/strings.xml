@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">CipherMaster</string>
-    <string name="input_plain_text">Input Plain text</string>
-    <string name="result">Result:</string>
     <string name="encrypt">Encrypt</string>
+    <string name="enter_plain_text">Enter Plain Text</string>
 </resources>
